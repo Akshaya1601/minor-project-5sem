@@ -5,6 +5,7 @@ ScreenManager:
     ProfileCreatedScreen:
     AccExistScreen:
     LoginScreen:
+    LoggedInScreen:
 
 <StartScreen>:
     name: 'start'
@@ -222,8 +223,6 @@ ScreenManager:
         text: 'Log In'
         on_press:
             root.login()
-            root.manager.current= 'profilecreated'
-            root.manager.transition.direction = 'left'
         pos_hint: {'center_x': 0.33, 'center_y': 0.3}
         
     MDRoundFlatButton:
@@ -233,4 +232,19 @@ ScreenManager:
             root.manager.transition.direction = 'right'
         pos_hint: {'center_x': 0.67, 'center_y': 0.3}
         theme_text_color: "ContrastParentBackground"
+        
+<LoggedInScreen>:
+    name: 'loggedin'
+    
+    MDLabel:
+        text: 'Successfully logged in!'
+        halign: 'center'
+        pos_hint: {'center_y': 0.6}
+    
+    MDRectangleFlatButton:
+        text: 'Log Out'
+        on_press: 
+            root.manager.current= 'start'
+            root.manager.transition.direction = 'right'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
 """
