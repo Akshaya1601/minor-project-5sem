@@ -130,7 +130,9 @@ sm.add_widget(LoggedInScreen(name='loggedin'))
 
 class DemoApp(MDApp):
     def build(self):
-        self.theme_cls.primary_palette = "BlueGray"
+        self.theme_cls.theme_style = "Light"
+        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.accent_palette = "Indigo"
         screen = Builder.load_string(navigation_helper)
 
         return screen
