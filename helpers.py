@@ -33,7 +33,7 @@ ScreenManager:
                     orientation: 'vertical'
 
                     MDToolbar:
-                        title: "Dog App"
+                        title: "Bangalore Animal Welfare"
                         elevation: 10
                         left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
 
@@ -235,16 +235,56 @@ ScreenManager:
         
 <LoggedInScreen>:
     name: 'loggedin'
-    
-    MDLabel:
-        text: 'Successfully logged in!'
-        halign: 'center'
-        pos_hint: {'center_y': 0.6}
-    
-    MDRectangleFlatButton:
+
+    MDFillRoundFlatIconButton:
         text: 'Log Out'
+        icon: 'account-plus'
         on_press: 
             root.manager.current= 'start'
             root.manager.transition.direction = 'right'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Home"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Home'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-arrow-right'
+                            theme_text_color: 'Hint'
 """
