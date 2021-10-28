@@ -9,10 +9,10 @@ import helpers
 from helpers import navigation_helper
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="",
-    database="dog_app"
+    host="sql6.freemysqlhosting.net",
+    user="sql6447330",
+    passwd="sMsA9bdcWK",
+    database="sql6447330"
 )
 
 mycursor = db.cursor()
