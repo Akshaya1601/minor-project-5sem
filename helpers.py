@@ -238,7 +238,7 @@ ScreenManager:
 
     MDFillRoundFlatIconButton:
         text: 'Log Out'
-        icon: 'account-plus'
+        icon: 'account-cancel'
         on_press: 
             root.manager.current= 'start'
             root.manager.transition.direction = 'right'
@@ -285,6 +285,6 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'start'
                                 root.manager.transition.direction = 'right'
-                            icon: 'account-arrow-right'
+                            icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
 """
