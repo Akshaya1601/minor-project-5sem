@@ -5,19 +5,22 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 from kivymd.uix.dialog import MDDialog
 import mysql.connector
 from kivymd.uix.button import MDFlatButton
-import helpers
+from kivymd.uix.behaviors import RoundedRectangularElevationBehavior
+from kivymd.uix.card import MDCard
 from helpers import navigation_helper
 
+__version__ = "0.0.1"
+
 db = mysql.connector.connect(
-    host="sql6.freemysqlhosting.net",
-    user="sql6447330",
-    passwd="sMsA9bdcWK",
-    database="sql6447330"
+    host="localhost",
+    user="root",
+    passwd="",
+    database="dog_app"
 )
 
 mycursor = db.cursor()
 
-Window.size = (300, 500)
+Window.size = (350, 583)
 
 
 class StartScreen(Screen):
@@ -119,6 +122,12 @@ class LoginScreen(Screen):
 class LoggedInScreen(Screen):
     pass
 
+class AdoptNowScreen(Screen):
+    pass
+
+class AdoptionAppealScreen(Screen):
+    pass
+
 
 sm = ScreenManager()
 sm.add_widget(StartScreen(name='start'))
@@ -126,7 +135,8 @@ sm.add_widget(NewProfileScreen(name='newprofile'))
 sm.add_widget(LoginScreen(name='login'))
 sm.add_widget(ProfileCreatedScreen(name='profilecreated'))
 sm.add_widget(LoggedInScreen(name='loggedin'))
-
+sm.add_widget(AdoptNowScreen(name='adoptnow'))
+sm.add_widget(AdoptionAppealScreen(name='appeal'))
 
 class DemoApp(MDApp):
     def build(self):
