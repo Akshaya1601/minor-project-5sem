@@ -6,6 +6,8 @@ ScreenManager:
     AccExistScreen:
     LoginScreen:
     LoggedInScreen:
+    AdoptNowScreen:
+    AdoptionAppealScreen:
 
 <StartScreen>:
     name: 'start'
@@ -107,7 +109,7 @@ ScreenManager:
     MDLabel:
         text: 'Register New Account'
         halign: 'center'
-        pos_hint: {'center_y': 0.8}
+        pos_hint: {'center_y': 0.73}
         font_style: 'H5'
         
     MDTextField:
@@ -198,7 +200,7 @@ ScreenManager:
     MDLabel:
         text: 'Log In'
         halign: 'center'
-        pos_hint: {'center_y': 0.8}
+        pos_hint: {'center_y': 0.73}
         font_style: 'H5'
         
     MDTextField:
@@ -223,26 +225,87 @@ ScreenManager:
         text: 'Log In'
         on_press:
             root.login()
-        pos_hint: {'center_x': 0.33, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.33, 'center_y': 0.4}
         
     MDRoundFlatButton:
         text: 'Back'
         on_press: 
             root.manager.current= 'start'
             root.manager.transition.direction = 'right'
-        pos_hint: {'center_x': 0.67, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.67, 'center_y': 0.4}
         theme_text_color: "ContrastParentBackground"
         
 <LoggedInScreen>:
     name: 'loggedin'
-
-    MDFillRoundFlatIconButton:
-        text: 'Log Out'
-        icon: 'account-cancel'
-        on_press: 
-            root.manager.current= 'start'
-            root.manager.transition.direction = 'right'
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    
+    ScrollView:
+        size_hint_y: None
+        size_hint_x: 1
+        size: root.size
+        
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: 700
+            padding: "15dp"
+            spacing: '8dp'
+            
+            MDLabel:
+                text: "Something"
+                size_hint: 0.5, 0.06
+            MDLabel:
+                text: "Something"
+                size_hint: 0.5, 0.06
+            
+            MDCard:
+                orientation: 'vertical'
+                padding: '7dp'
+                size_hint_x: .72
+                pos_hint: {'center_x': 0.5, 'top': 0.6}
+                elevation: 9
+                radius: [10, 10, 10, 10]
+                on_press: 
+                    root.manager.current= 'adoptnow'
+                    root.manager.transition.direction = 'left'
+                FitImage:
+                    id: 'adopt_img'
+                    source: "vector60-3771-01.jpg"
+                    pos_hint: {'top': 1}
+                    allow_stretch: True
+                    keep_ratio: False
+                MDLabel:
+                    text: 'Adopt Now'
+                    size_hint_y: .2
+                    pos_hint: {'center_x': 0.5}
+                        
+            MDCard:
+                orientation: 'vertical'
+                padding: '7dp'
+                size_hint_x: .72
+                pos_hint: {'center_x': 0.5, 'top': 1}
+                elevation: 9
+                radius: [10, 10, 10, 10]
+                on_press: 
+                    root.manager.current= 'appeal'
+                    root.manager.transition.direction = 'left'
+                FitImage:
+                    id: 'adopt_img'
+                    source: "vector60-3771-01.jpg"
+                    pos_hint: {'top': 1}
+                    allow_stretch: True
+                    keep_ratio: False
+                MDLabel:
+                    text: 'Post an Adoption Appeal'
+                    size_hint_y: .2
+                    pos_hint: {'center_x': 0.5}
+                               
+            MDFillRoundFlatIconButton:
+                text: 'Log Out'
+                icon: 'account-cancel'
+                on_press: 
+                    root.manager.current= 'start'
+                    root.manager.transition.direction = 'right'
+                pos_hint: {'center_x': 0.5, 'top': 1}
 
     MDNavigationLayout:
         ScreenManager:
@@ -287,4 +350,123 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+
+<AdoptNowScreen>:
+    name: 'adoptnow'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDFillRoundFlatButton:
+            text: 'Back to Home'
+            on_press: 
+                root.manager.current= 'loggedin'
+                root.manager.transition.direction = 'right'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        
+    
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Adopt Now"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Home'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+                        
+<AdoptionAppealScreen>:
+    name: 'appeal'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDFillRoundFlatButton:
+            text: 'Back to Home'
+            on_press: 
+                root.manager.current= 'loggedin'
+                root.manager.transition.direction = 'right'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        
+    
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Post Adoption Appeal"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Home'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+        
 """
