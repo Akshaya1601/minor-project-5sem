@@ -8,6 +8,7 @@ ScreenManager:
     LoggedInScreen:
     AdoptNowScreen:
     AdoptionAppealScreen:
+    PrarthanaScreen:
 
 <StartScreen>:
     name: 'start'
@@ -255,7 +256,7 @@ ScreenManager:
                 size_hint: 0.5, 0.06
             MDLabel:
                 text: "Something"
-                size_hint: 0.5, 0.06
+                size_hint: 0.5, 0.08
             
             MDCard:
                 orientation: 'vertical'
@@ -354,16 +355,120 @@ ScreenManager:
 <AdoptNowScreen>:
     name: 'adoptnow'
     
-    MDRelativeLayout:
-        size_hint: None, None
-        size: root.size
+    MDBoxLayout:
+        orientation:"vertical"            
+        MDBoxLayout:
+            orientation: 'vertical'
         
-        MDFillRoundFlatButton:
-            text: 'Back to Home'
-            on_press: 
-                root.manager.current= 'loggedin'
-                root.manager.transition.direction = 'right'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            MDLabel:
+                text: 'Something'
+                size_hint: 0.1, 0.15
+        
+            ScrollView:
+                MDGridLayout:
+                    cols:2
+                    padding:dp(2)
+                    spacing:dp(10)
+                    adaptive_height:True
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:milky Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+
+                        
+                        
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:Cookie  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+                            
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+                            
+
+                        
+                    ElementCard:
+                        image:'attempt2.jpeg'
+                        MDLabel:
+                            text:"Name:boky  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+                            
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:
+                                root.show_button()
+                                
+                                root.manager.transition.direction = 'right'
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:Tan  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
         
     
     MDNavigationLayout:
@@ -423,6 +528,30 @@ ScreenManager:
                 root.manager.current= 'loggedin'
                 root.manager.transition.direction = 'right'
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
         
     
     MDNavigationLayout:
@@ -468,5 +597,139 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+                            
+<PrarthanaScreen>:
+    name: 'paratha'
+
+    MDBoxLayout:
+        orientation:"vertical"            
+        MDBoxLayout:
+            ScrollView:
+                MDGridLayout:
+                    cols:2
+                    padding:dp(2)
+                    spacing:dp(10)
+                    adaptive_height:True
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:milky Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+
+                        
+                        
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:Cookie  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+                            
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+                            
+
+                        
+                    ElementCard:
+                        image:'attempt2.jpeg'
+                        MDLabel:
+                            text:"Name:boky  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+                            
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:
+                                root.show_button()
+                                
+                                root.manager.transition.direction = 'right'
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        MDLabel:
+                            text:"Name:Tan  Age:5months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        
+                    ElementCard:
+                        image:'doggo1.jpeg'
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
+
+
+    
         
+
+        
+
+<ElementCard@MDCard>:
+    image:''
+    
+    orientation:'vertical'
+    
+    size_hint_x:.5
+    elevation:15
+    size_hint_y:None
+    md_bg_color:app.theme_cls.primary_color
+    height:dp(220)
+    padding:dp(25)
+    spacing:dp(15)
+    radius:[25]
+    MDBoxLayout:
+        height:dp(120)
+        size_hint_y:None
+        Image:
+            source:root.image
+
 """
