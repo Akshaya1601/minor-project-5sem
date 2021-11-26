@@ -270,7 +270,7 @@ ScreenManager:
                     root.manager.transition.direction = 'left'
                 FitImage:
                     id: 'adopt_img'
-                    source: "vector60-3771-01.jpg"
+                    source: "dog1.jpg"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -290,8 +290,8 @@ ScreenManager:
                     root.manager.current= 'appeal'
                     root.manager.transition.direction = 'left'
                 FitImage:
-                    id: 'adopt_img'
-                    source: "vector60-3771-01.jpg"
+                    id: 'appeal_img'
+                    source: "img.png"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -371,7 +371,7 @@ ScreenManager:
                     spacing:dp(10)
                     adaptive_height:True
                     ElementCard:
-                        image:'doggo1.jpeg'
+                        image:'dog1.jpg'
                         MDLabel:
                             text:"Name:milky Age:5months"
                             font_size: dp(10)
@@ -379,17 +379,15 @@ ScreenManager:
                             pos_hint: {"center_x": 0.23,"center_y": 0.3}
 
 
-                        MDRaisedButton:
+                        MDFillRoundFlatButton:
                             text:"adopt/foster"
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
-                            on_release:root.show_button()
-
-                        
+                            on_release:root.show_button()                        
                         
                         
                     ElementCard:
-                        image:'doggo1.jpeg'
+                        image:'dog1.jpg'
                         MDLabel:
                             text:"Name:Cookie  Age:5months"
                             font_size: dp(10)
@@ -407,7 +405,7 @@ ScreenManager:
 
                         
                     ElementCard:
-                        image:'attempt2.jpeg'
+                        image:'dog1.jpg'
                         MDLabel:
                             text:"Name:boky  Age:5months"
                             font_size: dp(10)
@@ -426,7 +424,7 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                         
                     ElementCard:
-                        image:'doggo1.jpeg'
+                        image:'dog1.jpg'
                         MDLabel:
                             text:"Name:Tan  Age:5months"
                             font_size: dp(10)
@@ -441,10 +439,34 @@ ScreenManager:
                             on_release:root.show_button()
                         
                     ElementCard:
-                        image:'doggo1.jpeg'
+                        image:'dog1.jpg'
+                        MDLabel:
+                            text:"Name:Bhutan  Age:14months"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
                         
                     ElementCard:
-                        image:'doggo1.jpeg'
+                        image:'dog1.jpg'
+                        MDLabel:
+                            text:"Name:Askya    Age:1 year"
+                            font_size: dp(10)
+                            size_hint: 0.8, 0.8
+                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
+
+
+                        MDRaisedButton:
+                            text:"adopt/foster"
+                            font_size: dp(10)
+                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
+                            on_release:root.show_button()
                         
         # bottom navigation appbar
         MDBoxLayout:
