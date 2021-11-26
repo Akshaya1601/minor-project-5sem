@@ -132,7 +132,6 @@ class LoggedInScreen(Screen):
 
         mycursor.execute("SELECT * FROM adopterdetails")
 
-
         for i in mycursor:
             if current_account == i[1]:
                 self.manager.current = 'adoptnow'
@@ -187,6 +186,15 @@ class AdopterFormScreen(Screen):
     def close_dialog(self, obj):
         self.dialog.dismiss()
 
+class DonationScreen(Screen):
+    pass
+
+class ResourcesScreen(Screen):
+    pass
+
+class UserQueryScreen(Screen):
+    pass
+
 sm = ScreenManager()
 sm.add_widget(StartScreen(name='start'))
 sm.add_widget(NewProfileScreen(name='newprofile'))
@@ -196,6 +204,9 @@ sm.add_widget(LoggedInScreen(name='loggedin'))
 sm.add_widget(AdoptNowScreen(name='adoptnow'))
 sm.add_widget(AdoptionAppealScreen(name='appeal'))
 sm.add_widget(AdopterFormScreen(name='adopterform'))
+sm.add_widget(DonationScreen(name='donation'))
+sm.add_widget(ResourcesScreen(name='resources'))
+sm.add_widget(UserQueryScreen(name='queries'))
 
 class DemoApp(MDApp):
     def build(self):
