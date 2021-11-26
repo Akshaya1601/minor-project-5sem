@@ -22,6 +22,7 @@ db = mysql.connector.connect(
 )
 
 mycursor = db.cursor()
+current_account = "placeholder"
 
 Window.size = (350, 583)
 
@@ -79,6 +80,7 @@ class AccExistScreen(Screen):
 
 class LoginScreen(Screen):
     def login(self):
+        global current_account
         phno = self.ids.phno.text
         pw = self.ids.pw.text
 
@@ -89,6 +91,8 @@ class LoginScreen(Screen):
                 flag = 1
                 if pw == i[2]:
                     flag = 0
+                    current_account = phno
+
                     self.ids.phno.text = ""
                     self.ids.pw.text = ""
 
@@ -123,7 +127,19 @@ class LoginScreen(Screen):
         self.dialog.dismiss()
 
 class LoggedInScreen(Screen):
-    pass
+    def checkcurrent(self):
+        global current_account
+
+        mycursor.execute("SELECT * FROM adopterdetails")
+
+
+        for i in mycursor:
+            if current_account == i[1]:
+                self.manager.current = 'adoptnow'
+                self.manager.transition.direction = 'left'
+            else:
+                self.manager.current = 'adopterform'
+                self.manager.transition.direction = 'left'
 
 class AdoptNowScreen(Screen):
     def show_button(self):
@@ -145,16 +161,20 @@ class AdoptionAppealScreen(Screen):
     def close_dialog(self, obj):
         self.dialog.dismiss()
 
-class PrarthanaScreen(Screen):
-    def show_button(self):
-        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
-        print("Going to adoption form")
-        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
-        self.dialog.open()
+class AdopterFormScreen(Screen):
+    def submitdetails(self):
+        fullname = self.ids.fullName.text
+        ph_number = self.ids.ph_number.text
+        haspet = self.ids.haspet.text
+        haspet = haspet.lower()
+        adoptorfoster = self.ids.adoptorfoster.text
+        adoptorfoster = adoptorfoster.lower()
+        flatorind = self.ids.flatorind.text
+        flatorind = flatorind.lower()
 
-    def close_dialog(self, obj):
-        self.dialog.dismiss()
-
+        mycursor.execute("INSERT INTO adopterdetails (fullname, phno, haspet, adoptorfoster, flatorind) VALUES (%s, %s, %s, %s, %s)",
+                         (fullname, ph_number, haspet, adoptorfoster, flatorind))
+        db.commit()
 
 sm = ScreenManager()
 sm.add_widget(StartScreen(name='start'))
@@ -164,7 +184,7 @@ sm.add_widget(ProfileCreatedScreen(name='profilecreated'))
 sm.add_widget(LoggedInScreen(name='loggedin'))
 sm.add_widget(AdoptNowScreen(name='adoptnow'))
 sm.add_widget(AdoptionAppealScreen(name='appeal'))
-sm.add_widget(PrarthanaScreen(name='paratha'))
+sm.add_widget(AdopterFormScreen(name='adopterform'))
 
 class DemoApp(MDApp):
     def build(self):
