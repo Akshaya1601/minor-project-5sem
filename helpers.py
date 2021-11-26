@@ -8,7 +8,7 @@ ScreenManager:
     LoggedInScreen:
     AdoptNowScreen:
     AdoptionAppealScreen:
-    PrarthanaScreen:
+    AdopterFormScreen:
 
 <StartScreen>:
     name: 'start'
@@ -266,8 +266,7 @@ ScreenManager:
                 elevation: 9
                 radius: [10, 10, 10, 10]
                 on_press: 
-                    root.manager.current= 'adoptnow'
-                    root.manager.transition.direction = 'left'
+                    root.checkcurrent()
                 FitImage:
                     id: 'adopt_img'
                     source: "dog1.jpg"
@@ -539,7 +538,7 @@ ScreenManager:
                         
 <AdoptionAppealScreen>:
     name: 'appeal'
-    
+                  
     MDRelativeLayout:
         size_hint: None, None
         size: root.size
@@ -575,7 +574,8 @@ ScreenManager:
                     text_color:app.theme_cls.primary_color
                     halign:"center"
         
-    
+          
+        
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -619,121 +619,113 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
-                            
-<PrarthanaScreen>:
-    name: 'paratha'
 
-    MDBoxLayout:
-        orientation:"vertical"            
-        MDBoxLayout:
-            ScrollView:
-                MDGridLayout:
-                    cols:2
-                    padding:dp(2)
-                    spacing:dp(10)
-                    adaptive_height:True
-                    ElementCard:
-                        image:'doggo1.jpeg'
-                        MDLabel:
-                            text:"Name:milky Age:5months"
-                            font_size: dp(10)
-                            size_hint: 0.8, 0.8
-                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
-
-
-                        MDRaisedButton:
-                            text:"adopt/foster"
-                            font_size: dp(10)
-                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
-                            on_release:root.show_button()
-
-                        
-                        
-                        
-                    ElementCard:
-                        image:'doggo1.jpeg'
-                        MDLabel:
-                            text:"Name:Cookie  Age:5months"
-                            font_size: dp(10)
-                            size_hint: 0.8, 0.8
-                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
-                            
-
-
-                        MDRaisedButton:
-                            text:"adopt/foster"
-                            font_size: dp(10)
-                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
-                            on_release:root.show_button()
-                            
-
-                        
-                    ElementCard:
-                        image:'attempt2.jpeg'
-                        MDLabel:
-                            text:"Name:boky  Age:5months"
-                            font_size: dp(10)
-                            size_hint: 0.8, 0.8
-                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
-                            
-
-
-                        MDRaisedButton:
-                            text:"adopt/foster"
-                            font_size: dp(10)
-                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
-                            on_release:
-                                root.show_button()
-                                
-                                root.manager.transition.direction = 'right'
-                        
-                    ElementCard:
-                        image:'doggo1.jpeg'
-                        MDLabel:
-                            text:"Name:Tan  Age:5months"
-                            font_size: dp(10)
-                            size_hint: 0.8, 0.8
-                            pos_hint: {"center_x": 0.23,"center_y": 0.3}
-
-
-                        MDRaisedButton:
-                            text:"adopt/foster"
-                            font_size: dp(10)
-                            pos_hint: {"center_x": 0.5,"center_y": 0.08}
-                            on_release:root.show_button()
-                        
-                    ElementCard:
-                        image:'doggo1.jpeg'
-                        
-                    ElementCard:
-                        image:'doggo1.jpeg'
-                        
-        # bottom navigation appbar
-        MDBoxLayout:
-            size_hint_y:None
-            md_bg_color:.9,.9,.9,1
-            height:dp(60)
-            padding:[0,0,0,15]
-            MDBoxLayout:
-                orientation:'vertical'
-                MDIconButton:
-                    pos_hint:{'center_x':.5,'center_y':.5}
-                    icon:'home'
-                    theme_text_color:'Custom'
-                    text_color:app.theme_cls.primary_color
-                    
-                MDLabel:
-                    text:'Home'
-                    valign:"center"
-                    theme_text_color:'Custom'
-                    text_color:app.theme_cls.primary_color
-                    halign:"center"
-
-
+<AdopterFormScreen>:
+    name: 'adopterform'
+        
+    MDTextField:
+        id: fullName
+        hint_text: "Enter your full name"
+        pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        size_hint_x: None
+        width: 200
     
+    MDTextField:
+        id: ph_number
+        hint_text: "Enter your mobile number"
+        helper_text: ""
+        helper_text_mode: 'on_focus'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+        size_hint_x: None
+        width: 200
         
+    MDTextField:
+        id: haspet
+        hint_text: "Do you already have a pet?"
+        helper_text: "Yes/No"
+        helper_text_mode: 'on_focus'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+        size_hint_x: None
+        width: 200
+    
+    MDTextField:
+        id: adoptorfoster
+        hint_text: "Will you adopt or foster?"
+        helper_text: "Adopt/Foster"
+        helper_text_mode: 'on_focus'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+        size_hint_x: None
+        width: 200
+    
+    MDTextField:
+        id: flatorind
+        hint_text: "Do you live in a flat or independant??"
+        helper_text: "Flat/Independant"
+        helper_text_mode: 'on_focus'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+        size_hint_x: None
+        width: 200
 
+    MDRoundFlatButton:
+        text: 'Register'
+        on_press:
+            root.submitdetails()
+            root.manager.current= 'loggedin'
+            root.manager.transition.direction = 'right'
+        pos_hint: {'center_x': 0.33, 'center_y': 0.25}
         
+    MDRoundFlatButton:
+        text: 'Back'
+        on_press: 
+            root.manager.current= 'loggedin'
+            root.manager.transition.direction = 'right'
+        pos_hint: {'center_x': 0.67, 'center_y': 0.25}
+        theme_text_color: "ContrastParentBackground"
+    
+    
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Post Adoption Appeal"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Home'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'                   
 
 <ElementCard@MDCard>:
     image:''
