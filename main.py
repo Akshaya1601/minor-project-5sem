@@ -176,6 +176,17 @@ class AdopterFormScreen(Screen):
                          (fullname, ph_number, haspet, adoptorfoster, flatorind))
         db.commit()
 
+        close_button = MDFlatButton(text="Close",
+                                    on_release=self.close_dialog)
+        self.dialog = MDDialog(title="Thank you!",
+                               text="You can now view adoption listings!",
+                               size_hint=(0.7, 1),
+                               buttons=[close_button])
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
+
 sm = ScreenManager()
 sm.add_widget(StartScreen(name='start'))
 sm.add_widget(NewProfileScreen(name='newprofile'))
