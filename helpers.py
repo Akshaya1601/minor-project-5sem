@@ -9,6 +9,9 @@ ScreenManager:
     AdoptNowScreen:
     AdoptionAppealScreen:
     AdopterFormScreen:
+    DonationScreen:
+    ResourcesScreen:
+    UserQueryScreen:
 
 <StartScreen>:
     name: 'start'
@@ -247,15 +250,15 @@ ScreenManager:
         GridLayout:
             cols: 1
             size_hint_y: None
-            height: 700
+            height: 1735
             padding: "15dp"
             spacing: '8dp'
             
             MDLabel:
-                text: "Something"
+                text: "   "
                 size_hint: 0.5, 0.06
             MDLabel:
-                text: "Something"
+                text: "Oops! No more page to load"
                 size_hint: 0.5, 0.08
             
             MDCard:
@@ -296,6 +299,69 @@ ScreenManager:
                     keep_ratio: False
                 MDLabel:
                     text: 'Post an Adoption Appeal'
+                    size_hint_y: .2
+                    pos_hint: {'center_x': 0.5}
+            
+            MDCard:
+                orientation: 'vertical'
+                padding: '7dp'
+                size_hint_x: .72
+                pos_hint: {'center_x': 0.5, 'top': 1}
+                elevation: 9
+                radius: [10, 10, 10, 10]
+                on_press: 
+                    root.manager.current= 'donation'
+                    root.manager.transition.direction = 'left'
+                FitImage:
+                    id: 'donate_img'
+                    source: "donate.jpg"
+                    pos_hint: {'top': 1}
+                    allow_stretch: True
+                    keep_ratio: False
+                MDLabel:
+                    text: 'Donate to a good cause'
+                    size_hint_y: .2
+                    pos_hint: {'center_x': 0.5}
+            
+            MDCard:
+                orientation: 'vertical'
+                padding: '7dp'
+                size_hint_x: .72
+                pos_hint: {'center_x': 0.5, 'top': 1}
+                elevation: 9
+                radius: [10, 10, 10, 10]
+                on_press: 
+                    root.manager.current= 'resources'
+                    root.manager.transition.direction = 'left'
+                FitImage:
+                    id: 'donate_img'
+                    source: "helpline.jpg"
+                    pos_hint: {'top': 1}
+                    allow_stretch: True
+                    keep_ratio: False
+                MDLabel:
+                    text: 'Resources & Helplines'
+                    size_hint_y: .2
+                    pos_hint: {'center_x': 0.5}
+            
+            MDCard:
+                orientation: 'vertical'
+                padding: '7dp'
+                size_hint_x: .72
+                pos_hint: {'center_x': 0.5, 'top': 1}
+                elevation: 9
+                radius: [10, 10, 10, 10]
+                on_press: 
+                    root.manager.current= 'queries'
+                    root.manager.transition.direction = 'left'
+                FitImage:
+                    id: 'query_img'
+                    source: "query.jpg"
+                    pos_hint: {'top': 1}
+                    allow_stretch: True
+                    keep_ratio: False
+                MDLabel:
+                    text: 'Ask us your Questions'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
                                
@@ -518,7 +584,7 @@ ScreenManager:
                     source: 'vector60-3771-01.jpg'
 
                 MDLabel:
-                    text: '  Home'
+                    text: '  Adopt Now'
                     font_style: 'Subtitle1'
                     size_hint_y: None
                     height: self.texture_size[1]
@@ -602,7 +668,7 @@ ScreenManager:
                     source: 'vector60-3771-01.jpg'
 
                 MDLabel:
-                    text: '  Home'
+                    text: '  Post an Adoption Appeal'
                     font_style: 'Subtitle1'
                     size_hint_y: None
                     height: self.texture_size[1]
@@ -726,6 +792,258 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'                   
+
+<DonationScreen>:
+    name: 'donation'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDFillRoundFlatButton:
+            text: 'Back to Home'
+            on_press: 
+                root.manager.current= 'loggedin'
+                root.manager.transition.direction = 'right'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
+        
+          
+        
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Donate"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Donate'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+                            
+<ResourcesScreen>:
+    name: 'resources'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDFillRoundFlatButton:
+            text: 'Back to Home'
+            on_press: 
+                root.manager.current= 'loggedin'
+                root.manager.transition.direction = 'right'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
+        
+          
+        
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Resources & Helplines"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Resources & Helplines'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+
+<UserQueryScreen>:
+    name: 'queries'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDFillRoundFlatButton:
+            text: 'Back to Home'
+            on_press: 
+                root.manager.current= 'loggedin'
+                root.manager.transition.direction = 'right'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
+        
+          
+        
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "Ask us a Question"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Ask us a question'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+                    
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
 
 <ElementCard@MDCard>:
     image:''
