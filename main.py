@@ -8,6 +8,9 @@ from kivymd.uix.button import MDFlatButton
 from kivymd.uix.behaviors import RoundedRectangularElevationBehavior
 from kivymd.uix.card import MDCard
 from helpers import navigation_helper
+from kivy.factory import Factory
+from kivy.uix.behaviors import button
+from kivymd.uix.screen import MDScreen
 
 __version__ = "0.0.1"
 
@@ -123,10 +126,34 @@ class LoggedInScreen(Screen):
     pass
 
 class AdoptNowScreen(Screen):
-    pass
+    def show_button(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Going to adoption form")
+        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
 
 class AdoptionAppealScreen(Screen):
-    pass
+    def show_button(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Going to adoption form")
+        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
+
+class PrarthanaScreen(Screen):
+    def show_button(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Going to adoption form")
+        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
 
 
 sm = ScreenManager()
@@ -137,6 +164,7 @@ sm.add_widget(ProfileCreatedScreen(name='profilecreated'))
 sm.add_widget(LoggedInScreen(name='loggedin'))
 sm.add_widget(AdoptNowScreen(name='adoptnow'))
 sm.add_widget(AdoptionAppealScreen(name='appeal'))
+sm.add_widget(PrarthanaScreen(name='paratha'))
 
 class DemoApp(MDApp):
     def build(self):
