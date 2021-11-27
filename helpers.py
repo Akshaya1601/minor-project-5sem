@@ -889,13 +889,13 @@ ScreenManager:
             text: 'BBMP control room : 080-22660000'
             halign: 'center'
             size_hint:0.7,0.5
-            font_style: 'H5'
+            font_style: 'H6'
             pos_hint: {'center_x':0.5,'center_y': 0.8}
         MDLabel:
             text: 'Animal Cruelty'
             halign: 'center'
             size_hint:0.6,0.6
-            font_style: 'H5'
+            font_style: 'H6'
             pos_hint: {'center_x':0.5,'center_y': 0.7}
         MDLabel:
             text: '70224 57222'
@@ -903,10 +903,10 @@ ScreenManager:
             size_hint:0.6,0.6
             pos_hint: {'center_x':0.5,'center_y': 0.65}
         MDLabel:
-            text: 'Malleshwaram Veterinary'
+            text: 'Malleshwaram Veterinary :'
             halign: 'center'
             size_hint: 0.4,0.5
-            font_style: 'H5'
+            font_style: 'H6'
             pos_hint: {'center_x':0.5,'center_y': 0.55}
         MDLabel:
             text: '23468345'
