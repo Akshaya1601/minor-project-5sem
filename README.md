@@ -13,3 +13,6 @@ __*Ensure you have the following installed on your computer:*__
 6. kivy-deps.sdl2
 7. kivy-md
 8. mysql-connector
+
+## How to run
+Just make sure all files are in the same working directory, and then run main.py using PyCharm or terminal
