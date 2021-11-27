@@ -885,6 +885,32 @@ ScreenManager:
         size_hint: None, None
         size: root.size
         
+        MDLabel:
+            text: 'BBMP control room : 080-22660000'
+            halign: 'center'
+            size_hint:0.7,0.5
+            pos_hint: {'center_x':0.3,'center_y': 0.8}
+        MDLabel:
+            text: 'Animal Cruelty'
+            halign: 'center'
+            size_hint:0.6,0.6
+            pos_hint: {'center_x':0.29,'center_y': 0.7}
+        MDLabel:
+            text: '70224 57222'
+            halign: 'center'
+            size_hint:0.6,0.6
+            pos_hint: {'center_x':0.39,'center_y': 0.65}
+        MDLabel:
+            text: 'Malleshwaram Veterinary :'
+            halign: 'center'
+            size_hint:0.4,0.5
+            pos_hint: {'center_x':0.29,'center_y': 0.5}
+        MDLabel:
+            text: '23468345'
+            halign: 'center'
+            size_hint:0.6,0.6
+            pos_hint: {'center_x':0.39,'center_y': 0.44}
+        
         MDFillRoundFlatButton:
             text: 'Back to Home'
             on_press: 
