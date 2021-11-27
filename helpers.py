@@ -219,6 +219,7 @@ ScreenManager:
     MDTextField:
         id: pw
         hint_text: "Enter password"
+        password:True
         helper_text: ""
         helper_text_mode: 'on_focus'
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
