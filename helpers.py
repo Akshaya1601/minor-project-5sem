@@ -903,7 +903,7 @@ ScreenManager:
             size_hint:0.6,0.6
             pos_hint: {'center_x':0.5,'center_y': 0.65}
         MDLabel:
-            text: 'Malleshwaram Veterinary :'
+            text: 'Malleshwaram Veterinary'
             halign: 'center'
             size_hint: 0.4,0.5
             font_style: 'H5'
@@ -912,7 +912,7 @@ ScreenManager:
             text: '23468345'
             halign: 'center'
             size_hint:0.6,0.6
-            pos_hint: {'center_x':0.5,'center_y': 0.5}
+            pos_hint: {'center_x':0.5,'center_y': 0.47}
                         
         # bottom navigation appbar
         MDBoxLayout:
