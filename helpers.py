@@ -55,7 +55,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Welcome to our App'
@@ -219,7 +219,7 @@ ScreenManager:
     MDTextField:
         id: pw
         hint_text: "Enter password"
-        password:True
+        password: True
         helper_text: ""
         helper_text_mode: 'on_focus'
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
@@ -273,7 +273,7 @@ ScreenManager:
                     root.checkcurrent()
                 FitImage:
                     id: 'adopt_img'
-                    source: "dog1.jpg"
+                    source: "static/dog1.jpg"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -294,7 +294,7 @@ ScreenManager:
                     root.manager.transition.direction = 'left'
                 FitImage:
                     id: 'appeal_img'
-                    source: "img.png"
+                    source: "static/img.png"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -315,7 +315,7 @@ ScreenManager:
                     root.manager.transition.direction = 'left'
                 FitImage:
                     id: 'donate_img'
-                    source: "donate.jpg"
+                    source: "static/donate.jpg"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -336,7 +336,7 @@ ScreenManager:
                     root.manager.transition.direction = 'left'
                 FitImage:
                     id: 'donate_img'
-                    source: "helpline.jpg"
+                    source: "static/helpline.jpg"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -357,7 +357,7 @@ ScreenManager:
                     root.manager.transition.direction = 'left'
                 FitImage:
                     id: 'query_img'
-                    source: "query.jpg"
+                    source: "static/query.jpg"
                     pos_hint: {'top': 1}
                     allow_stretch: True
                     keep_ratio: False
@@ -397,7 +397,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Home'
@@ -437,7 +437,7 @@ ScreenManager:
                     spacing:dp(10)
                     adaptive_height:True
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:milky Age:5months"
                             font_size: dp(10)
@@ -453,7 +453,7 @@ ScreenManager:
                         
                         
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:Cookie  Age:5months"
                             font_size: dp(10)
@@ -471,7 +471,7 @@ ScreenManager:
 
                         
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:boky  Age:5months"
                             font_size: dp(10)
@@ -490,7 +490,7 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                         
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:Tan  Age:5months"
                             font_size: dp(10)
@@ -505,7 +505,7 @@ ScreenManager:
                             on_release:root.show_button()
                         
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:Bhutan  Age:14months"
                             font_size: dp(10)
@@ -520,7 +520,7 @@ ScreenManager:
                             on_release:root.show_button()
                         
                     ElementCard:
-                        image:'dog1.jpg'
+                        image:'static/dog1.jpg'
                         MDLabel:
                             text:"Name:Askya    Age:1 year"
                             font_size: dp(10)
@@ -582,7 +582,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Adopt Now'
@@ -666,7 +666,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Post an Adoption Appeal'
@@ -773,7 +773,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Home'
@@ -857,7 +857,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Donate'
@@ -889,34 +889,30 @@ ScreenManager:
             text: 'BBMP control room : 080-22660000'
             halign: 'center'
             size_hint:0.7,0.5
-            pos_hint: {'center_x':0.3,'center_y': 0.8}
+            font_style: 'H5'
+            pos_hint: {'center_x':0.5,'center_y': 0.8}
         MDLabel:
             text: 'Animal Cruelty'
             halign: 'center'
             size_hint:0.6,0.6
-            pos_hint: {'center_x':0.29,'center_y': 0.7}
+            font_style: 'H5'
+            pos_hint: {'center_x':0.5,'center_y': 0.7}
         MDLabel:
             text: '70224 57222'
             halign: 'center'
             size_hint:0.6,0.6
-            pos_hint: {'center_x':0.39,'center_y': 0.65}
+            pos_hint: {'center_x':0.5,'center_y': 0.65}
         MDLabel:
             text: 'Malleshwaram Veterinary :'
             halign: 'center'
-            size_hint:0.4,0.5
-            pos_hint: {'center_x':0.29,'center_y': 0.5}
+            size_hint: 0.4,0.5
+            font_style: 'H5'
+            pos_hint: {'center_x':0.5,'center_y': 0.55}
         MDLabel:
             text: '23468345'
             halign: 'center'
             size_hint:0.6,0.6
-            pos_hint: {'center_x':0.39,'center_y': 0.44}
-        
-        MDFillRoundFlatButton:
-            text: 'Back to Home'
-            on_press: 
-                root.manager.current= 'loggedin'
-                root.manager.transition.direction = 'right'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            pos_hint: {'center_x':0.5,'center_y': 0.5}
                         
         # bottom navigation appbar
         MDBoxLayout:
@@ -967,7 +963,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Resources & Helplines'
@@ -1051,7 +1047,7 @@ ScreenManager:
                 padding: '8dp'
 
                 Image:
-                    source: 'vector60-3771-01.jpg'
+                    source: 'static/vector60-3771-01.jpg'
 
                 MDLabel:
                     text: '  Ask us a question'
