@@ -6,6 +6,8 @@ __*Ensure you have the following installed on your computer:*__
     1. Apache Server running
     2. MySQL Server running
     3. Database name: dog_app, table name: registration, columns: fullname, phno, pw.
+    4. table name: adopterdetails, columns: fullname, phno, haspet, adoptorfoster, flatorind
+    5. __*All FIELDS IN ALL TABLES ARE OF TYPE VARCHAR*__
 2. Kivy
 3. kivy-deps.angle
 4. kivy.deps.glew
