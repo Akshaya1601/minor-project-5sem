@@ -11,6 +11,9 @@ from helpers import navigation_helper
 from kivy.factory import Factory
 from kivy.uix.behaviors import button
 from kivymd.uix.screen import MDScreen
+from kivy.uix.button import Button
+from kivy.uix.image import Image, AsyncImage
+import pyperclip
 
 __version__ = "0.0.1"
 
@@ -187,7 +190,8 @@ class AdopterFormScreen(Screen):
         self.dialog.dismiss()
 
 class DonationScreen(Screen):
-    pass
+    def copy_text(self, text):
+        pyperclip.copy(text)
 
 class ResourcesScreen(Screen):
     pass
