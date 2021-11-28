@@ -801,13 +801,66 @@ ScreenManager:
         size_hint: None, None
         size: root.size
         
+        MDLabel:
+            text: 'Would you like to donate?'
+            halign: 'center'
+            size_hint:0.7,0.5
+            font_style: 'H5'
+            pos_hint: {'center_x':0.5,'center_y': 0.8}
+            
+        MDLabel:
+            text: 'All money sent will be used towards helping stray animals in Bangalore and we will be as transparent as possible about it.'
+            halign: 'center'
+            size_hint:0.6,0.6
+            font_size: dp(12)
+            pos_hint: {'center_x':0.5,'center_y': 0.7}
+      
+        Image:
+            source: 'static/qrcodepay.png'
+            size: self.texture_size
+            
+        MDLabel:
+            text: 'Please scan the above code to donate via GPay.'
+            halign: 'center'
+            size_hint:0.6,0.6
+            font_size: dp(12)
+            pos_hint: {'center_x':0.5,'center_y': 0.34}
+            
+        MDLabel:
+            text: 'UPI ID: akshaya.nadathur@okhdfcbank'
+            halign: 'center'
+            size_hint:0.6,0.6
+            font_size: dp(10)
+            pos_hint: {'center_x':0.5,'center_y': 0.30}
+            
+        MDRoundFlatButton:
+            text: "copy"
+            pos_hint: {'center_x':0.8,'center_y': 0.30}    
+            font_size: dp(9)        
+            size_hint: 0.05, 0.03
+            size: self.size
+            on_release: root.copy_text("akshaya.nadathur@okhdfcbank")
+    
+        MDLabel:
+            text: 'Phone number - 9148312464'
+            halign: 'center' 
+            size_hint:0.6,0.6
+            font_size: dp(10)
+            pos_hint: {'center_x':0.5,'center_y': 0.26}
+            
+        MDRoundFlatButton:
+            text: "copy"
+            pos_hint: {'center_x':0.8,'center_y': 0.25}    
+            font_size: dp(9)        
+            on_release: root.copy_text("9148312464")
+      
         MDFillRoundFlatButton:
-            text: 'Back to Home'
-            on_press: 
-                root.manager.current= 'loggedin'
-                root.manager.transition.direction = 'right'
+            text: 'All 2021 donations'
+            on_release:
+                import webbrowser
+                webbrowser.open('https://docs.google.com/spreadsheets/d/19WpV4BES7QK3inlwEf8gpuRj4aCee917QZ01k-3oHPo/htmlview')
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-                        
+                             
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
