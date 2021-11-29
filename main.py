@@ -197,6 +197,17 @@ class ResourcesScreen(Screen):
     pass
 
 class UserQueryScreen(Screen):
+    def validate(self):
+        flag = 0
+        query = self.ids.query.text
+        if query == "":
+            flag = 1
+
+        if flag == 0:
+            self.sendquery()
+        else:
+            self.show_error()
+
     def sendquery(self):
         global current_account
 
@@ -217,6 +228,12 @@ class UserQueryScreen(Screen):
         ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
         print("Query submitted!")
         self.dialog = MDDialog(text="Your question has been sent", buttons=[ok_button])
+        self.dialog.open()
+
+    def show_error(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Error!")
+        self.dialog = MDDialog(text="Cannot submit empty query!", buttons=[ok_button])
         self.dialog.open()
 
     def close_dialog(self, obj):
