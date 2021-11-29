@@ -197,7 +197,14 @@ class ResourcesScreen(Screen):
     pass
 
 class UserQueryScreen(Screen):
-    pass
+    def show_button(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Going to adoption form")
+        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
+        self.dialog.open()
+
+    def close_dialog(self, obj):
+        self.dialog.dismiss()
 
 sm = ScreenManager()
 sm.add_widget(StartScreen(name='start'))
