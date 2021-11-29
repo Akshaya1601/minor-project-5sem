@@ -164,6 +164,64 @@ class AdoptionAppealScreen(Screen):
         self.dialog.dismiss()
 
 class AdopterFormScreen(Screen):
+    def show_error1(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Error!")
+        self.dialog = MDDialog(text="Please fill all fields!!", buttons=[ok_button])
+        self.dialog.open()
+
+    def show_error2(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Error!")
+        self.dialog = MDDialog(text="The answer to do you have a pet must be either YES or NO!", buttons=[ok_button])
+        self.dialog.open()
+
+    def show_error3(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Error!")
+        self.dialog = MDDialog(text="The answer to adopt or foster must be either ADOPT or FOSTER!", buttons=[ok_button])
+        self.dialog.open()
+
+    def show_error4(self):
+        ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
+        print("Error!")
+        self.dialog = MDDialog(text="The answer to flat or independant must be either FLAT or INDEPENDANT!", buttons=[ok_button])
+        self.dialog.open()
+
+    def validate(self):
+        fullname = self.ids.fullName.text
+        ph_number = self.ids.ph_number.text
+        haspet = self.ids.haspet.text.lower()
+        adoptorfoster = self.ids.adoptorfoster.text.lower()
+        flatorind = self.ids.flatorind.text.lower()
+
+        valid_haspet = ['yes', 'no']
+        valid_adoptorfoster = ['adopt', 'foster']
+        valid_flatorind = ['flat', 'independant']
+        flag = 0
+
+        print([fullname, ph_number, haspet, adoptorfoster, flatorind])
+
+        if fullname=="" or ph_number=="" or haspet=="" or adoptorfoster=="" or flatorind=="":
+            flag = 1
+        elif haspet not in valid_haspet:
+            flag = 2
+        elif adoptorfoster not in valid_adoptorfoster:
+            flag = 3
+        elif flatorind not in valid_flatorind:
+            flag = 4
+
+        if flag == 0:
+            self.submitdetails()
+        elif flag == 1:
+            self.show_error1()
+        elif flag == 2:
+            self.show_error2()
+        elif flag == 3:
+            self.show_error3()
+        elif flag == 4:
+            self.show_error4()
+
     def submitdetails(self):
         fullname = self.ids.fullName.text
         ph_number = self.ids.ph_number.text
@@ -185,6 +243,8 @@ class AdopterFormScreen(Screen):
                                size_hint=(0.7, 1),
                                buttons=[close_button])
         self.dialog.open()
+        self.manager.current = 'loggedin'
+        self.manager.transition.direction = 'right'
 
     def close_dialog(self, obj):
         self.dialog.dismiss()
