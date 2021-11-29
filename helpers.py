@@ -1061,7 +1061,7 @@ ScreenManager:
         MDFillRoundFlatButton:
             text: 'Submit'
             on_press: 
-                root.sendquery()
+                root.validate()
             pos_hint: {'center_x': 0.5, 'center_y': 0.27}
 
         # bottom navigation appbar
