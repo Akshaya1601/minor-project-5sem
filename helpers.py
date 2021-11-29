@@ -736,9 +736,7 @@ ScreenManager:
     MDRoundFlatButton:
         text: 'Register'
         on_press:
-            root.submitdetails()
-            root.manager.current= 'loggedin'
-            root.manager.transition.direction = 'right'
+            root.validate()
         pos_hint: {'center_x': 0.33, 'center_y': 0.25}
 
     MDRoundFlatButton:
