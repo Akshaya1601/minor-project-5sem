@@ -852,6 +852,14 @@ ScreenManager:
                 import webbrowser
                 webbrowser.open('https://docs.google.com/spreadsheets/d/19WpV4BES7QK3inlwEf8gpuRj4aCee917QZ01k-3oHPo/htmlview')
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            
+        MDLabel:
+            text: 'copy UPI ID'
+            halign: 'right' 
+            size_hint:0.6,0.6
+            font_size: dp(9)
+            theme_text_color: "Hint"
+            pos_hint: {'center_x':0.615,'center_y': 0.21}
 
         # bottom navigation appbar
         MDBoxLayout:
