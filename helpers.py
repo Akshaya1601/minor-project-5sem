@@ -68,19 +68,19 @@ ScreenManager:
                     font_style: 'Caption'
                     size_hint_y: None
                     height: self.texture_size[1]
-                    
+
                 MDLabel:
                     text: '  Akshaya N'
                     font_style: 'Caption'
                     size_hint_y: None
                     height: self.texture_size[1]
-                    
+
                 MDLabel:
                     text: '  Pranjal P'
                     font_style: 'Caption'
                     size_hint_y: None
                     height: self.texture_size[1]
-                    
+
                 MDLabel:
                     text: '  Prarthana G'
                     font_style: 'Caption'
@@ -91,7 +91,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Register'
                             on_press: 
@@ -115,7 +115,7 @@ ScreenManager:
         halign: 'center'
         pos_hint: {'center_y': 0.73}
         font_style: 'H5'
-        
+
     MDTextField:
         id: fullName
         hint_text: "Enter your full name"
@@ -124,7 +124,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.6}
         size_hint_x: None
         width: 200
-    
+
     MDTextField:
         id: ph_number
         hint_text: "Enter your mobile number"
@@ -133,7 +133,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         size_hint_x: None
         width: 200
-        
+
     MDTextField:
         id: pw
         hint_text: "Enter password"
@@ -148,7 +148,7 @@ ScreenManager:
         on_press:
             root.registration()
         pos_hint: {'center_x': 0.33, 'center_y': 0.3}
-        
+
     MDRoundFlatButton:
         text: 'Back'
         on_press: 
@@ -159,17 +159,17 @@ ScreenManager:
 
 <ProfileCreatedScreen>:
     name: 'profilecreated'
-    
+
     MDLabel:
         text: 'Profile successfully registered!'
         halign: 'center'
         pos_hint: {'center_y': 0.6}
-    
+
     MDLabel:
         text: 'Log in from home'
         halign: 'center'
         pos_hint: {'center_y': 0.5}
-    
+
     MDRectangleFlatButton:
         text: 'Home'
         on_press: 
@@ -179,17 +179,17 @@ ScreenManager:
 
 <AccExistScreen>:
     name: 'accexists'
-    
+
     MDLabel:
         text: 'Account already registered!!'
         halign: 'center'
         pos_hint: {'center_y': 0.6}
-    
+
     MDLabel:
         text: 'Log in from home'
         halign: 'center'
         pos_hint: {'center_y': 0.5}
-    
+
     MDRectangleFlatButton:
         text: 'Home'
         on_press: 
@@ -206,7 +206,7 @@ ScreenManager:
         halign: 'center'
         pos_hint: {'center_y': 0.73}
         font_style: 'H5'
-        
+
     MDTextField:
         id: phno
         hint_text: "Enter phone number"
@@ -215,7 +215,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.6}
         size_hint_x: None
         width: 200
-    
+
     MDTextField:
         id: pw
         hint_text: "Enter password"
@@ -231,7 +231,7 @@ ScreenManager:
         on_press:
             root.login()
         pos_hint: {'center_x': 0.33, 'center_y': 0.4}
-        
+
     MDRoundFlatButton:
         text: 'Back'
         on_press: 
@@ -239,29 +239,29 @@ ScreenManager:
             root.manager.transition.direction = 'right'
         pos_hint: {'center_x': 0.67, 'center_y': 0.4}
         theme_text_color: "ContrastParentBackground"
-        
+
 <LoggedInScreen>:
     name: 'loggedin'
-    
+
     ScrollView:
         size_hint_y: None
         size_hint_x: 1
         size: root.size
-        
+
         GridLayout:
             cols: 1
             size_hint_y: None
             height: 1735
             padding: "15dp"
             spacing: '8dp'
-            
+
             MDLabel:
                 text: "   "
                 size_hint: 0.5, 0.06
             MDLabel:
                 text: "Oops! No more page to load"
                 size_hint: 0.5, 0.08
-            
+
             MDCard:
                 orientation: 'vertical'
                 padding: '7dp'
@@ -281,7 +281,7 @@ ScreenManager:
                     text: 'Adopt Now'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
-                        
+
             MDCard:
                 orientation: 'vertical'
                 padding: '7dp'
@@ -302,7 +302,7 @@ ScreenManager:
                     text: 'Post an Adoption Appeal'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
-            
+
             MDCard:
                 orientation: 'vertical'
                 padding: '7dp'
@@ -310,7 +310,7 @@ ScreenManager:
                 pos_hint: {'center_x': 0.5, 'top': 1}
                 elevation: 9
                 radius: [10, 10, 10, 10]
-                on_press: 
+                on_press:
                     root.manager.current= 'donation'
                     root.manager.transition.direction = 'left'
                 FitImage:
@@ -323,7 +323,7 @@ ScreenManager:
                     text: 'Donate to a good cause'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
-            
+
             MDCard:
                 orientation: 'vertical'
                 padding: '7dp'
@@ -344,7 +344,7 @@ ScreenManager:
                     text: 'Resources & Helplines'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
-            
+
             MDCard:
                 orientation: 'vertical'
                 padding: '7dp'
@@ -365,7 +365,7 @@ ScreenManager:
                     text: 'Ask us your Questions'
                     size_hint_y: .2
                     pos_hint: {'center_x': 0.5}
-                               
+
             MDFillRoundFlatIconButton:
                 text: 'Log Out'
                 icon: 'account-cancel'
@@ -409,7 +409,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -420,16 +420,16 @@ ScreenManager:
 
 <AdoptNowScreen>:
     name: 'adoptnow'
-    
+
     MDBoxLayout:
         orientation:"vertical"            
         MDBoxLayout:
             orientation: 'vertical'
-        
+
             MDLabel:
                 text: 'Something'
                 size_hint: 0.1, 0.15
-        
+
             ScrollView:
                 MDGridLayout:
                     cols:2
@@ -450,8 +450,8 @@ ScreenManager:
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:root.show_button()                        
-                        
-                        
+
+
                     ElementCard:
                         image:'static/dog1.jpg'
                         MDLabel:
@@ -459,7 +459,7 @@ ScreenManager:
                             font_size: dp(10)
                             size_hint: 0.8, 0.8
                             pos_hint: {"center_x": 0.23,"center_y": 0.3}
-                            
+
 
 
                         MDRaisedButton:
@@ -467,9 +467,9 @@ ScreenManager:
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:root.show_button()
-                            
 
-                        
+
+
                     ElementCard:
                         image:'static/dog1.jpg'
                         MDLabel:
@@ -477,7 +477,7 @@ ScreenManager:
                             font_size: dp(10)
                             size_hint: 0.8, 0.8
                             pos_hint: {"center_x": 0.23,"center_y": 0.3}
-                            
+
 
 
                         MDRaisedButton:
@@ -486,9 +486,9 @@ ScreenManager:
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:
                                 root.show_button()
-                                
+
                                 root.manager.transition.direction = 'right'
-                        
+
                     ElementCard:
                         image:'static/dog1.jpg'
                         MDLabel:
@@ -503,7 +503,7 @@ ScreenManager:
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:root.show_button()
-                        
+
                     ElementCard:
                         image:'static/dog1.jpg'
                         MDLabel:
@@ -518,7 +518,7 @@ ScreenManager:
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:root.show_button()
-                        
+
                     ElementCard:
                         image:'static/dog1.jpg'
                         MDLabel:
@@ -533,7 +533,7 @@ ScreenManager:
                             font_size: dp(10)
                             pos_hint: {"center_x": 0.5,"center_y": 0.08}
                             on_release:root.show_button()
-                        
+
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
@@ -550,15 +550,15 @@ ScreenManager:
                         root.manager.transition.direction = 'right'
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
-                    
+
                 MDLabel:
                     text:'Home'
                     valign:"center"
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
                     halign:"center"
-        
-    
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -594,7 +594,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -602,21 +602,21 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
-                        
+
 <AdoptionAppealScreen>:
     name: 'appeal'
-                  
+
     MDRelativeLayout:
         size_hint: None, None
         size: root.size
-        
+
         MDFillRoundFlatButton:
             text: 'Back to Home'
             on_press: 
                 root.manager.current= 'loggedin'
                 root.manager.transition.direction = 'right'
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-                        
+
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
@@ -633,16 +633,16 @@ ScreenManager:
                         root.manager.transition.direction = 'right'
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
-                    
+
                 MDLabel:
                     text:'Home'
                     valign:"center"
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
                     halign:"center"
-        
-          
-        
+
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -678,7 +678,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -689,14 +689,14 @@ ScreenManager:
 
 <AdopterFormScreen>:
     name: 'adopterform'
-        
+
     MDTextField:
         id: fullName
         hint_text: "Enter your full name"
         pos_hint: {'center_x': 0.5, 'center_y': 0.75}
         size_hint_x: None
         width: 200
-    
+
     MDTextField:
         id: ph_number
         hint_text: "Enter your mobile number"
@@ -705,7 +705,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.65}
         size_hint_x: None
         width: 200
-        
+
     MDTextField:
         id: haspet
         hint_text: "Do you already have a pet?"
@@ -714,7 +714,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.55}
         size_hint_x: None
         width: 200
-    
+
     MDTextField:
         id: adoptorfoster
         hint_text: "Will you adopt or foster?"
@@ -723,7 +723,7 @@ ScreenManager:
         pos_hint: {'center_x': 0.5, 'center_y': 0.45}
         size_hint_x: None
         width: 200
-    
+
     MDTextField:
         id: flatorind
         hint_text: "Do you live in a flat or independant??"
@@ -740,7 +740,7 @@ ScreenManager:
             root.manager.current= 'loggedin'
             root.manager.transition.direction = 'right'
         pos_hint: {'center_x': 0.33, 'center_y': 0.25}
-        
+
     MDRoundFlatButton:
         text: 'Back'
         on_press: 
@@ -748,8 +748,8 @@ ScreenManager:
             root.manager.transition.direction = 'right'
         pos_hint: {'center_x': 0.67, 'center_y': 0.25}
         theme_text_color: "ContrastParentBackground"
-    
-    
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -785,7 +785,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -796,71 +796,63 @@ ScreenManager:
 
 <DonationScreen>:
     name: 'donation'
-    
+
     MDRelativeLayout:
         size_hint: None, None
         size: root.size
-        
+
         MDLabel:
             text: 'Would you like to donate?'
             halign: 'center'
             size_hint:0.7,0.5
             font_style: 'H5'
             pos_hint: {'center_x':0.5,'center_y': 0.8}
-            
+
         MDLabel:
             text: 'All money sent will be used towards helping stray animals in Bangalore and we will be as transparent as possible about it.'
             halign: 'center'
             size_hint:0.6,0.6
             font_size: dp(12)
             pos_hint: {'center_x':0.5,'center_y': 0.7}
-      
+
         Image:
             source: 'static/qrcodepay.png'
             size: self.texture_size
-            
+
         MDLabel:
             text: 'Please scan the above code to donate via GPay.'
             halign: 'center'
             size_hint:0.6,0.6
             font_size: dp(12)
             pos_hint: {'center_x':0.5,'center_y': 0.34}
-            
+
         MDLabel:
             text: 'UPI ID: akshaya.nadathur@okhdfcbank'
             halign: 'center'
             size_hint:0.6,0.6
             font_size: dp(10)
             pos_hint: {'center_x':0.5,'center_y': 0.30}
-            
-        MDRoundFlatButton:
-            text: "copy"
-            pos_hint: {'center_x':0.8,'center_y': 0.30}    
-            font_size: dp(9)        
-            size_hint: 0.05, 0.03
-            size: self.size
+
+        MDFloatingActionButton:
+            id: copybutton1
+            icon: "content-copy"
+            pos_hint: {'center_x':0.85,'center_y': 0.275}
             on_release: root.copy_text("akshaya.nadathur@okhdfcbank")
-    
+
         MDLabel:
             text: 'Phone number - 9148312464'
             halign: 'center' 
             size_hint:0.6,0.6
             font_size: dp(10)
             pos_hint: {'center_x':0.5,'center_y': 0.26}
-            
-        MDRoundFlatButton:
-            text: "copy"
-            pos_hint: {'center_x':0.8,'center_y': 0.25}    
-            font_size: dp(9)        
-            on_release: root.copy_text("9148312464")
-      
+
         MDFillRoundFlatButton:
             text: 'All 2021 donations'
             on_release:
                 import webbrowser
                 webbrowser.open('https://docs.google.com/spreadsheets/d/19WpV4BES7QK3inlwEf8gpuRj4aCee917QZ01k-3oHPo/htmlview')
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-                             
+
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
@@ -877,16 +869,16 @@ ScreenManager:
                         root.manager.transition.direction = 'right'
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
-                    
+
                 MDLabel:
                     text:'Home'
                     valign:"center"
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
                     halign:"center"
-        
-          
-        
+
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -922,7 +914,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -930,14 +922,14 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
-                            
+
 <ResourcesScreen>:
     name: 'resources'
-    
+
     MDRelativeLayout:
         size_hint: None, None
         size: root.size
-        
+
         MDLabel:
             text: 'BBMP control room : 080-22660000'
             halign: 'center'
@@ -966,7 +958,7 @@ ScreenManager:
             halign: 'center'
             size_hint:0.6,0.6
             pos_hint: {'center_x':0.5,'center_y': 0.47}
-                        
+
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
@@ -983,16 +975,16 @@ ScreenManager:
                         root.manager.transition.direction = 'right'
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
-                    
+
                 MDLabel:
                     text:'Home'
                     valign:"center"
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
                     halign:"center"
-        
-          
-        
+
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -1028,7 +1020,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -1039,11 +1031,11 @@ ScreenManager:
 
 <UserQueryScreen>:
     name: 'queries'
-    
+
     MDRelativeLayout:
         size_hint: None, None
         size: root.size
-        
+
         MDLabel:
             text: 'Ask a Question'
             halign: 'center'
@@ -1062,14 +1054,14 @@ ScreenManager:
             on_press: 
                 root.show_button()
             pos_hint: {'center_x': 0.2, 'center_y': 0.5}
-        
+
         MDFillRoundFlatButton:
             text: 'Back to Home'
             on_press: 
                 root.manager.current= 'loggedin'
                 root.manager.transition.direction = 'right'
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-                        
+
         # bottom navigation appbar
         MDBoxLayout:
             size_hint_y:None
@@ -1086,16 +1078,16 @@ ScreenManager:
                         root.manager.transition.direction = 'right'
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
-                    
+
                 MDLabel:
                     text:'Home'
                     valign:"center"
                     theme_text_color:'Custom'
                     text_color:app.theme_cls.primary_color
                     halign:"center"
-        
-          
-        
+
+
+
     MDNavigationLayout:
         ScreenManager:
             Screen:
@@ -1131,7 +1123,7 @@ ScreenManager:
                     MDList:
                         spacing: '8dp'
                         padding: '8dp'
-                    
+
                         MDRectangleFlatIconButton:
                             text: 'Log Out'
                             on_press: 
@@ -1142,9 +1134,9 @@ ScreenManager:
 
 <ElementCard@MDCard>:
     image:''
-    
+
     orientation:'vertical'
-    
+
     size_hint_x:.5
     elevation:15
     size_hint_y:None
