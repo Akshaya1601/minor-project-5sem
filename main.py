@@ -200,8 +200,6 @@ class AdopterFormScreen(Screen):
         valid_flatorind = ['flat', 'independant']
         flag = 0
 
-        print([fullname, ph_number, haspet, adoptorfoster, flatorind])
-
         if fullname=="" or ph_number=="" or haspet=="" or adoptorfoster=="" or flatorind=="":
             flag = 1
         elif haspet not in valid_haspet:
