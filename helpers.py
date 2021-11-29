@@ -1037,30 +1037,24 @@ ScreenManager:
         size: root.size
 
         MDLabel:
-            text: 'Ask a Question'
+            text: 'Ask us a Question'
             halign: 'center'
             size_hint: 0.5,0.3
             font_style: 'H5'
-            pos_hint: {'center_x':0.35,'center_y': 0.7}
+            pos_hint: {'center_x': 0.5, 'center_y': 0.7}
         MDTextField:
             hint_text: "Enter Query"
             mode:"rectangle"
             id:query
             multiline: True
-            pos_hint:{'center_x': 0.4, 'center_y': 0.6}
-            size_hint_x: 0.5
+            pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+            size_hint_x: 0.7
+            size_hint_y: 0.3
         MDFillRoundFlatButton:
             text: 'Submit'
             on_press: 
-                root.show_button()
-            pos_hint: {'center_x': 0.2, 'center_y': 0.5}
-
-        MDFillRoundFlatButton:
-            text: 'Back to Home'
-            on_press: 
-                root.manager.current= 'loggedin'
-                root.manager.transition.direction = 'right'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                root.sendquery()
+            pos_hint: {'center_x': 0.5, 'center_y': 0.27}
 
         # bottom navigation appbar
         MDBoxLayout:
