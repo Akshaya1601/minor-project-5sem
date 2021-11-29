@@ -1044,6 +1044,25 @@ ScreenManager:
         size_hint: None, None
         size: root.size
         
+         MDLabel:
+            text: 'Ask a Question'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            font_style: 'H5'
+            pos_hint: {'center_x':0.35,'center_y': 0.7}
+        MDTextField:
+            hint_text: "Enter Query"
+            mode:"rectangle"
+            id:query
+            multiline: True
+            pos_hint:{'center_x': 0.4, 'center_y': 0.6}
+            size_hint_x: 0.5
+        MDFillRoundFlatButton:
+            text: 'Submit'
+            on_press: 
+                root.show_button()
+            pos_hint: {'center_x': 0.2, 'center_y': 0.5}
+        
         MDFillRoundFlatButton:
             text: 'Back to Home'
             on_press: 
