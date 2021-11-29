@@ -197,10 +197,26 @@ class ResourcesScreen(Screen):
     pass
 
 class UserQueryScreen(Screen):
+    def sendquery(self):
+        global current_account
+
+        mycursor.execute("SELECT * FROM registration")
+
+        for i in mycursor:
+            if i[1] == current_account:
+                fullname = i[0]
+
+        querytext = self.ids.query.text
+
+        mycursor.execute("INSERT INTO queries (fullname, phno, query) VALUES (%s, %s, %s)", (fullname, current_account, querytext))
+        db.commit()
+        self.ids.query.text = ""
+        self.show_button()
+
     def show_button(self):
         ok_button = MDFlatButton(text="OK", on_release=self.close_dialog)
-        print("Going to adoption form")
-        self.dialog = MDDialog(text="Your request has been sent", buttons=[ok_button])
+        print("Query submitted!")
+        self.dialog = MDDialog(text="Your question has been sent", buttons=[ok_button])
         self.dialog.open()
 
     def close_dialog(self, obj):
