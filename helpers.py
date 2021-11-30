@@ -606,16 +606,136 @@ ScreenManager:
 <AdoptionAppealScreen>:
     name: 'appeal'
 
-    MDRelativeLayout:
-        size_hint: None, None
-        size: root.size
+   
+    MDBoxLayout:
+        orientation:"vertical"            
+        MDBoxLayout:
+            orientation: 'vertical'
 
-        MDFillRoundFlatButton:
-            text: 'Back to Home'
-            on_press: 
-                root.manager.current= 'loggedin'
-                root.manager.transition.direction = 'right'
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            MDLabel:
+                text: 'Something'
+                size_hint: 0.1, 0.15
+
+            ScrollView:
+                MDGridLayout:
+                    cols:1
+                    padding:dp(2)
+                    spacing:dp(10)
+                    adaptive_height:True
+    
+                    MDTextField:
+                        id:name
+                        mode:"rectangle"
+                        hint_text: "Enter Name"
+                        helper_text: "Enter Full Name"
+                        helper_text_mode: "on_focus"
+                        halign:"center"
+                        pos_hint:{'center_x': 0.5, 'center_y': 0.8}
+                        size_hint_x:None
+                        width:250
+
+                    MDTextField:
+                        hint_text: "Enter Mobile Number"
+                        id:phone
+                        mode:"rectangle"
+                        helper_text: "Must be 10 digits"
+                        helper_text_mode: "on_focus"
+                        halign:"center"
+                        pos_hint:{'center_x': 0.5, 'center_y': 0.65}
+                        size_hint_x:None
+                        width:250
+
+                    MDTextField:
+                        hint_text: "Enter Address"
+                        mode:"rectangle"
+                        id:address
+                        helper_text: "Required"
+                        helper_text_mode: "on_focus"
+                        multiline: True
+                        pos_hint:{'center_x': 0.5, 'center_y': 0.5}
+                        size_hint_x:None
+                        width:250
+            
+                    MDTextField:
+                        hint_text: "Enter Pincode"
+                        helper_text: "Required"
+                        mode:"rectangle"
+                        id:pincode
+                        helper_text_mode: "on_error"
+                        max_text_length: 8
+                        pos_hint:{'center_x': 0.5, 'center_y': 0.35}
+                        size_hint_x:None
+                        width:250
+       
+                    MDTextField:
+                        mode:"rectangle"
+                        hint_text: "How many animals do you want to put up for adoption/fostering?"
+                        id:number
+                        helper_text: "Enter a number"
+                        helper_text_mode: "on_focus"
+                        pos_hint:{'center_x': 0.5, 'center_y': 0.20}
+                        size_hint_x:None
+                        width:250
+                        
+                    MDLabel:
+                        text:"Please select which animal(s)"
+                        size_hint:(None,None)
+                        width:250
+                        pos_hint:{'center_x':0.23,'center_y':0.1}
+                    
+                    MDLabel:
+                        text:"Cat"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.23,'center_y':0.4}
+            
+                    MDCheckbox:
+                        pos_hint:{'center_x': .3, 'center_y': .4}
+                        size_hint:(None,None)
+                        width:50
+            
+                    MDLabel:
+                        text:"Kitten"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.5,'center_y':0.4}
+        
+                    MDCheckbox:
+                        pos_hint:{'center_x': .57, 'center_y': .4}
+                        size_hint:(None,None)
+                        width:50
+                    MDLabel
+                        text:"Dog"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.23,'center_y':0.3}
+                    MDCheckbox:
+                        pos_hint:{'center_x': 0.3, 'center_y': 0.3}
+                        size_hint:(None,None)
+                        width:50
+
+                    MDLabel:
+                        text:"Puppy"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.5,'center_y':0.3}
+                    
+                    MDCheckbox:
+                        pos_hint:{'center_x': 0.57, 'center_y': 0.3}
+                        size_hint:(None,None)
+                        width:50
+        
+                    MDRelativeLayout:
+                        size_hint: None,None
+                        size: root.size
+                
+                        MDFillRoundFlatButton:
+                            text: 'Submit'
+                            on_press: 
+                                root.manager.current= 'loggedin'
+                                root.manager.transition.direction = 'right'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+
 
         # bottom navigation appbar
         MDBoxLayout:
