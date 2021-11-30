@@ -308,6 +308,8 @@ class UserQueryScreen(Screen):
     def close_dialog(self, obj):
         self.dialog.dismiss()
 
+class AboutUsScreen(Screen):
+    pass
 
 sm = ScreenManager()
 sm.add_widget(SplashScreen1(name='splash1'))
@@ -324,6 +326,7 @@ sm.add_widget(AdopterFormScreen(name='adopterform'))
 sm.add_widget(DonationScreen(name='donation'))
 sm.add_widget(ResourcesScreen(name='resources'))
 sm.add_widget(UserQueryScreen(name='queries'))
+sm.add_widget(AboutUsScreen(name='aboutus'))
 
 class DemoApp(MDApp):
     def build(self):
