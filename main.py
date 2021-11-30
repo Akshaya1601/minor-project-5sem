@@ -32,7 +32,7 @@ db = mysql.connector.connect(
 mycursor = db.cursor()
 current_account = "placeholder"
 
-Window.size = (400, 583)
+Window.size = (350, 583)
 
 class SplashScreen1(Screen):
     pass
@@ -236,12 +236,9 @@ class AdopterFormScreen(Screen):
     def submitdetails(self):
         fullname = self.ids.fullName.text
         ph_number = self.ids.ph_number.text
-        haspet = self.ids.haspet.text
-        haspet = haspet.lower()
-        adoptorfoster = self.ids.adoptorfoster.text
-        adoptorfoster = adoptorfoster.lower()
-        flatorind = self.ids.flatorind.text
-        flatorind = flatorind.lower()
+        haspet = self.ids.haspet.text.lower()
+        adoptorfoster = self.ids.adoptorfoster.text.lower()
+        flatorind = self.ids.flatorind.text.lower()
 
         mycursor.execute("INSERT INTO adopterdetails (fullname, phno, haspet, adoptorfoster, flatorind) VALUES (%s, %s, %s, %s, %s)",
                          (fullname, ph_number, haspet, adoptorfoster, flatorind))
@@ -290,7 +287,8 @@ class UserQueryScreen(Screen):
 
         querytext = self.ids.query.text
 
-        mycursor.execute("INSERT INTO queries (fullname, phno, query) VALUES (%s, %s, %s)", (fullname, current_account, querytext))
+        mycursor.execute("INSERT INTO queries (fullname, phno, query) VALUES (%s, %s, %s)",
+                         (fullname, current_account, querytext))
         db.commit()
         self.ids.query.text = ""
         self.show_button()
