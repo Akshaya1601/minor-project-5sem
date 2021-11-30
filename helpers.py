@@ -15,6 +15,7 @@ ScreenManager:
     DonationScreen:
     ResourcesScreen:
     UserQueryScreen:
+    AboutUsScreen:
 
 <SplashScreen1>:
     name: 'splash1'
@@ -479,6 +480,14 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
 
 <AdoptNowScreen>:
     name: 'adoptnow'
@@ -662,6 +671,14 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'start'
                                 root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
 
@@ -874,6 +891,14 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
 
 <AdopterFormScreen>:
     name: 'adopterform'
@@ -977,6 +1002,14 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'start'
                                 root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'                   
 
@@ -1116,6 +1149,14 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
 
 <ResourcesScreen>:
     name: 'resources'
@@ -1222,6 +1263,14 @@ ScreenManager:
                                 root.manager.transition.direction = 'right'
                             icon: 'account-cancel-outline'
                             theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
 
 <UserQueryScreen>:
     name: 'queries'
@@ -1303,6 +1352,129 @@ ScreenManager:
 
                 MDLabel:
                     text: '  Ask us a question'
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                ScrollView:
+                    MDList:
+                        spacing: '8dp'
+                        padding: '8dp'
+
+                        MDRectangleFlatIconButton:
+                            text: 'Log Out'
+                            on_press: 
+                                root.manager.current= 'start'
+                                root.manager.transition.direction = 'right'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+                        
+                        MDRectangleFlatIconButton:
+                            text: 'About Us'
+                            on_press: 
+                                root.manager.current= 'aboutus'
+                                root.manager.transition.direction = 'left'
+                            icon: 'account-cancel-outline'
+                            theme_text_color: 'Hint'
+
+<AboutUsScreen>:
+    name: 'aboutus'
+    
+    MDRelativeLayout:
+        size_hint: None, None
+        size: root.size
+        
+        MDLabel:
+            text: 'Team 8'
+            font_style: 'H5'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            font_style: 'H5'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        
+        MDLabel:
+            text: 'Akash Bagchi [ENG19CS0019]'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+        
+        MDLabel:
+            text: 'Akshaya Nadathur [ENG19CS0024]'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+        
+        MDLabel:
+            text: 'M Pranjal Padakannaya [ENG19CS0159]'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+        
+        MDLabel:
+            text: 'Prarthana G [ENG19CS0229]'
+            halign: 'center'
+            size_hint: 0.5,0.3
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+            
+        MDFillRoundFlatButton:
+            text: 'GitHub repo'
+            on_release:
+                import webbrowser
+                webbrowser.open('https://github.com/akashbagchi/minor-project-5sem')
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        
+        # bottom navigation appbar
+        MDBoxLayout:
+            size_hint_y:None
+            md_bg_color:.9,.9,.9,1
+            height:dp(60)
+            padding:[0,0,0,15]
+            MDBoxLayout:
+                orientation:'vertical'
+                MDIconButton:
+                    pos_hint:{'center_x':.5,'center_y':.5}
+                    icon:'home'
+                    on_release:
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+
+                MDLabel:
+                    text:'Home'
+                    valign:"center"
+                    theme_text_color:'Custom'
+                    text_color:app.theme_cls.primary_color
+                    halign:"center"
+
+
+    MDNavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        title: "About Us"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state('toggle')]]
+
+                    Widget:
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '8dp'
+                padding: '8dp'
+
+                Image:
+                    source: 'static/vector60-3771-01.jpg'
+
+                MDLabel:
+                    text: '  Adopt Now'
                     font_style: 'Subtitle1'
                     size_hint_y: None
                     height: self.texture_size[1]
