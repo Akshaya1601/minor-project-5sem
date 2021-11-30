@@ -744,63 +744,66 @@ ScreenManager:
                 MDLabel:
                     text:"Please select which animal(s)"
                     size_hint:(None,None)
+                    font_style: 'H6'
                     width:250
+                    height: 50
                     pos_hint:{'center_x':0.23}
 
-                MDLabel:
-                    text:"Cat"
-                    size_hint:(None,None)
-                    width:100
-                    pos_hint:{'center_x':0.23}
-
-                MDCheckbox:
-                    pos_hint:{'center_x': .3}
-                    size_hint:(None,None)
-                    width:50
+                MDGridLayout:
+                    cols: 2
+                    padding: '10dp'
+                    adaptive_height: 'True'
                     
-                MDLabel:
-                    text:"Kitten"
-                    size_hint:(None,None)
-                    width:100
-                    pos_hint:{'center_x':0.5}
+                    MDLabel:
+                        text:"Cat"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.23}
 
-                MDCheckbox:
-                    pos_hint:{'center_x': .57}
-                    size_hint:(None,None)
-                    width:50
-                    
-                MDLabel
-                    text:"Dog"
-                    size_hint:(None,None)
-                    width:100
-                    pos_hint:{'center_x':0.23}
+                    MDCheckbox:
+                        pos_hint:{'center_x': .3}
+                        size_hint:(None,None)
+                        width:50
+                        
+                    MDLabel:
+                        text:"Kitten"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.5}
+    
+                    MDCheckbox:
+                        pos_hint:{'center_x': .57}
+                        size_hint:(None,None)
+                        width:50
+                        
+                    MDLabel
+                        text:"Dog"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.23}
+    
+                    MDCheckbox:
+                        pos_hint:{'center_x': 0.3}
+                        size_hint:(None,None)
+                        width:50
+    
+                    MDLabel:
+                        text:"Puppy"
+                        size_hint:(None,None)
+                        width:100
+                        pos_hint:{'center_x':0.5}
+    
+                    MDCheckbox:
+                        pos_hint:{'center_x': 0.57}
+                        size_hint:(None,None)
+                        width:50
 
-                MDCheckbox:
-                    pos_hint:{'center_x': 0.3}
-                    size_hint:(None,None)
-                    width:50
-
-                MDLabel:
-                    text:"Puppy"
-                    size_hint:(None,None)
-                    width:100
-                    pos_hint:{'center_x':0.5}
-
-                MDCheckbox:
-                    pos_hint:{'center_x': 0.57}
-                    size_hint:(None,None)
-                    width:50
-
-                MDRelativeLayout:
-                    size_hint: None,None
-                    size: root.size
-
-                    MDFillRoundFlatButton:
-                        text: 'Submit'
-                        on_press: 
-                            root.manager.current= 'loggedin'
-                            root.manager.transition.direction = 'right'
-                        pos_hint: {'center_x': 0.5}
+                MDFillRoundFlatButton:
+                    text: 'Submit'
+                    on_press: 
+                        root.manager.current= 'loggedin'
+                        root.manager.transition.direction = 'right'
+                    pos_hint: {'center_x': 0.5}
             
         # bottom navigation appbar
         MDBoxLayout:
