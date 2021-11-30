@@ -27,8 +27,16 @@ db = mysql.connector.connect(
 mycursor = db.cursor()
 current_account = "placeholder"
 
-Window.size = (350, 583)
+Window.size = (400, 583)
 
+class SplashScreen1(Screen):
+    pass
+
+class SplashScreen2(Screen):
+    pass
+
+class SplashScreen3(Screen):
+    pass
 
 class StartScreen(Screen):
     pass
@@ -297,7 +305,11 @@ class UserQueryScreen(Screen):
     def close_dialog(self, obj):
         self.dialog.dismiss()
 
+
 sm = ScreenManager()
+sm.add_widget(SplashScreen1(name='splash1'))
+sm.add_widget(SplashScreen2(name='splash2'))
+sm.add_widget(SplashScreen3(name='splash3'))
 sm.add_widget(StartScreen(name='start'))
 sm.add_widget(NewProfileScreen(name='newprofile'))
 sm.add_widget(LoginScreen(name='login'))
