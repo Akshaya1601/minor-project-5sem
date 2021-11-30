@@ -486,7 +486,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <AdoptNowScreen>:
@@ -679,7 +679,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <AdoptionAppealScreen>:
@@ -897,7 +897,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <AdopterFormScreen>:
@@ -1010,7 +1010,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'                   
 
 <DonationScreen>:
@@ -1155,7 +1155,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <ResourcesScreen>:
@@ -1269,7 +1269,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <UserQueryScreen>:
@@ -1374,7 +1374,7 @@ ScreenManager:
                             on_press: 
                                 root.manager.current= 'aboutus'
                                 root.manager.transition.direction = 'left'
-                            icon: 'account-cancel-outline'
+                            icon: 'information-variant'
                             theme_text_color: 'Hint'
 
 <AboutUsScreen>:
