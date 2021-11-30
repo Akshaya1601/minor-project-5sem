@@ -1,5 +1,8 @@
 navigation_helper = """
 ScreenManager:
+    SplashScreen1:
+    SplashScreen2:
+    SplashScreen3:
     StartScreen:
     NewProfileScreen:
     ProfileCreatedScreen:
@@ -13,6 +16,65 @@ ScreenManager:
     ResourcesScreen:
     UserQueryScreen:
 
+<SplashScreen1>:
+    name: 'splash1'
+    Image:
+        id: gif
+        source: 'static/splash1.gif'
+        pos: self.pos
+        size_hint: None, None
+        size: root.size
+        allow_stretch: True
+        keep_ratio: False
+        anim_delay: 0
+        anim_loop: 50
+        
+    Button:
+        background_color: 0, 0, 0, 0
+        on_press: 
+            root.manager.current='splash2'
+            root.manager.transition.direction='left'
+
+<SplashScreen2>:
+    name: 'splash2'
+    Image:
+        id: gif
+        source: 'static/splash2.gif'
+        pos: self.pos
+        size_hint: None, None
+        size: root.size
+        allow_stretch: True
+        keep_ratio: False
+        anim_delay: 0
+        anim_loop: 20
+        
+    Button:
+        background_color: 0, 0, 0, 0
+        on_press: 
+            root.manager.current='splash3'
+            root.manager.transition.direction='left'
+
+<SplashScreen3>:
+    name: 'splash3'
+    Image:
+        id: gif
+        source: 'static/splash3.gif'
+        pos: self.pos
+        size_hint: None, None
+        size: root.size
+        allow_stretch: True
+        keep_ratio: False
+        anim_delay: 0
+        anim_loop: 20
+        
+    Button:
+        background_color: 0, 0, 0, 0
+        on_press: 
+            root.manager.current='start'
+            root.manager.transition.direction='left'
+        
+        
+        
 <StartScreen>:
     name: 'start'
 
@@ -850,7 +912,7 @@ ScreenManager:
                 import webbrowser
                 webbrowser.open('https://docs.google.com/spreadsheets/d/19WpV4BES7QK3inlwEf8gpuRj4aCee917QZ01k-3oHPo/htmlview')
             pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-            
+
         MDLabel:
             text: 'copy UPI ID'
             halign: 'right' 
