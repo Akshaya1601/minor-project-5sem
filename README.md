@@ -1,5 +1,8 @@
 # Minor Project
 
+[__*Click here for Presentation*__](https://docs.google.com/presentation/d/1aWJX7ZvK5G1t6c7TPsuaZeGyW91oJd_-wjNdksxkGKM/edit#slide=id.gfb4a2999e1_1_33)
+
+
 ### Dependencies
 __*Ensure you have the following installed on your computer:*__
 1. XAMPP Control panel
